@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Festival</string>
+    <string name="button_addFestival">Add Festival</string>
+    <string name="hint_festivalTitle">Festival Title</string>
+    <string name="hint_festivalDescription">Description </string>
+    <string name="menu_addFestival">Add</string>
+</resources>
