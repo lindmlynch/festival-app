@@ -30,6 +30,7 @@ class FestivalActivity : AppCompatActivity() {
         binding.btnAdd.setOnClickListener() {
             festival.title = binding.festivalTitle.text.toString()
             festival.description = binding.description.text.toString()
+            festival.date = binding.date.text.toString()
             if (festival.title.isNotEmpty()) {
                 app.festivals.add(festival.copy())
                 i("add Button Pressed: ${festival}")

@@ -28,6 +28,7 @@ class FestivalAdapter constructor(private var festivals: List<FestivalModel>) :
         fun bind(festival: FestivalModel) {
             binding.festivalTitle.text = festival.title
             binding.description.text = festival.description
+            binding.date.text = festival.date
         }
     }
 }
