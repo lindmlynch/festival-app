@@ -21,22 +21,23 @@ class FestivalActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityFestivalBinding.inflate(layoutInflater)
         setContentView(binding.root)
-
         binding.toolbarAdd.title = title
         setSupportActionBar(binding.toolbarAdd)
-
         app = application as MainApp
-        i("Festival Activity started...")
+
+        if (intent.hasExtra("festival_edit")) {
+            festival = intent.extras?.getParcelable("festival_edit")!!
+            binding.festivalTitle.setText(festival.title)
+            binding.description.setText(festival.description)
+            binding.date.setText(festival.date)
+        }
+
         binding.btnAdd.setOnClickListener() {
             festival.title = binding.festivalTitle.text.toString()
             festival.description = binding.description.text.toString()
             festival.date = binding.date.text.toString()
             if (festival.title.isNotEmpty()) {
-                app.festivals.add(festival.copy())
-                i("add Button Pressed: ${festival}")
-                for (i in app.festivals.indices) {
-                    i("Festival[$i]:${this.app.festivals[i]}")
-                }
+                app.festivals.create(festival.copy())
                 setResult(RESULT_OK)
                 finish()
             }

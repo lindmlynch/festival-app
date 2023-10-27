@@ -1,13 +1,13 @@
 package org.wit.festival.main
 
 import android.app.Application
-import org.wit.festival.models.FestivalModel
+import org.wit.festival.models.FestivalMemStore
 import timber.log.Timber
 import timber.log.Timber.Forest.i
 
 class MainApp : Application() {
 
-    val festivals = ArrayList<FestivalModel>()
+    val festivals = FestivalMemStore()
 
     override fun onCreate() {
         super.onCreate()

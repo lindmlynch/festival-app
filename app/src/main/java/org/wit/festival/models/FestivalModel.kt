@@ -1,5 +1,9 @@
 package org.wit.festival.models
 
-data class FestivalModel(var title: String = "",
+import android.os.Parcelable
+import kotlinx.parcelize.Parcelize
+@Parcelize
+data class FestivalModel(var id: Long = 0,
+                         var title: String = "",
                          var description: String = "",
-                         var date: String = "")
+                         var date: String = "") : Parcelable
