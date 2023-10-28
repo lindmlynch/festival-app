@@ -35,6 +35,9 @@ class FestivalAdapter constructor(private var festivals: List<FestivalModel>,
             binding.festivalTitle.text = festival.title
             binding.description.text = festival.description
             binding.date.text = festival.date
+            binding.valueForMoney.rating = festival.valueForMoney
+            binding.accessibility.rating = festival.accessibility
+            binding.familyFriendly.rating = festival.familyFriendly
             binding.root.setOnClickListener { listener.onFestivalClick(festival) }
         }
     }

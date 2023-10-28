@@ -36,6 +36,9 @@ class FestivalActivity : AppCompatActivity() {
             festival.title = binding.festivalTitle.text.toString()
             festival.description = binding.description.text.toString()
             festival.date = binding.date.text.toString()
+            festival.valueForMoney = binding.valueForMoney.rating
+            festival.accessibility = binding.accessibility.rating
+            festival.familyFriendly = binding.familyFriendly.rating
             if (festival.title.isNotEmpty()) {
                 app.festivals.create(festival.copy())
                 setResult(RESULT_OK)
