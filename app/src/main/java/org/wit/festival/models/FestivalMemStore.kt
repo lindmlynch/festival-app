@@ -28,6 +28,10 @@ class FestivalMemStore : FestivalStore {
             foundFestival.title = festival.title
             foundFestival.description = festival.description
             foundFestival.date = festival.date
+            foundFestival.valueForMoney = festival.valueForMoney
+            foundFestival.accessibility = festival.accessibility
+            foundFestival.familyFriendly = festival.familyFriendly
+            foundFestival.image = festival.image
             logAll()
         }
     }
