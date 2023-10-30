@@ -15,6 +15,7 @@ import org.wit.festival.databinding.ActivityFestivalBinding
 import org.wit.festival.helpers.showImagePicker
 import org.wit.festival.main.MainApp
 import org.wit.festival.models.FestivalModel
+import org.wit.festival.models.Location
 import timber.log.Timber
 import timber.log.Timber.Forest.i
 
@@ -23,6 +24,8 @@ class FestivalActivity : AppCompatActivity() {
     var festival = FestivalModel()
     lateinit var app: MainApp
     private lateinit var imageIntentLauncher : ActivityResultLauncher<Intent>
+    private lateinit var mapIntentLauncher : ActivityResultLauncher<Intent>
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -74,8 +77,23 @@ class FestivalActivity : AppCompatActivity() {
             showImagePicker(imageIntentLauncher)
         }
 
+        binding.festivalLocation.setOnClickListener {
+            val location = Location(52.245696, -7.139102, 15f)
+            if (festival.zoom != 0f) {
+                location.lat =  festival.lat
+                location.lng = festival.lng
+                location.zoom = festival.zoom
+            }
+            val launcherIntent = Intent(this, MapActivity::class.java)
+                .putExtra("location", location)
+            mapIntentLauncher.launch(launcherIntent)
+        }
+
         registerImagePickerCallback()
+        registerMapCallback()
     }
+
+
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
         menuInflater.inflate(R.menu.menu_festival, menu)
@@ -102,6 +120,26 @@ class FestivalActivity : AppCompatActivity() {
                                 .load(festival.image)
                                 .into(binding.festivalImage)
                             binding.chooseImage.setText(R.string.change_festival_image)
+                        } // end of if
+                    }
+                    RESULT_CANCELED -> { } else -> { }
+                }
+            }
+    }
+
+    private fun registerMapCallback() {
+        mapIntentLauncher =
+            registerForActivityResult(ActivityResultContracts.StartActivityForResult())
+            { result ->
+                when (result.resultCode) {
+                    RESULT_OK -> {
+                        if (result.data != null) {
+                            i("Got Location ${result.data.toString()}")
+                            val location = result.data!!.extras?.getParcelable<Location>("location")!!
+                            i("Location == $location")
+                            festival.lat = location.lat
+                            festival.lng = location.lng
+                            festival.zoom = location.zoom
                         } // end of if
                     }
                     RESULT_CANCELED -> { } else -> { }

@@ -32,6 +32,9 @@ class FestivalMemStore : FestivalStore {
             foundFestival.accessibility = festival.accessibility
             foundFestival.familyFriendly = festival.familyFriendly
             foundFestival.image = festival.image
+            foundFestival.lat = festival.lat
+            foundFestival.lng = festival.lng
+            foundFestival.zoom = festival.zoom
             logAll()
         }
     }

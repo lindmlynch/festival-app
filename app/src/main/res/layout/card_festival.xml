@@ -55,6 +55,7 @@
 
         <RatingBar
             android:id="@+id/valueForMoney"
+            style="?android:attr/ratingBarStyleSmall"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:numStars="5"
@@ -65,6 +66,7 @@
 
         <RatingBar
             android:id="@+id/accessibility"
+            style="?android:attr/ratingBarStyleSmall"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:numStars="5"
@@ -75,6 +77,7 @@
 
         <RatingBar
             android:id="@+id/familyFriendly"
+            style="?android:attr/ratingBarStyleSmall"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:numStars="5"
