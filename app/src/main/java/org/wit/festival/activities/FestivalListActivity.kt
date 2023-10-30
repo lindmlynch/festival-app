@@ -20,6 +20,7 @@ class FestivalListActivity : AppCompatActivity(), FestivalListener {
 
     lateinit var app: MainApp
     private lateinit var binding: ActivityFestivalListBinding
+    private var position: Int = 0
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -58,9 +59,11 @@ class FestivalListActivity : AppCompatActivity(), FestivalListener {
                 (binding.recyclerView.adapter)?.notifyItemRangeChanged(0, app.festivals.findAll().size)
             }
         }
-    override fun onFestivalClick(festival: FestivalModel) {
+
+    override fun onFestivalClick(festival: FestivalModel, pos : Int) {
         val launcherIntent = Intent(this, FestivalActivity::class.java)
         launcherIntent.putExtra("festival_edit", festival)
+        position = pos
         getClickResult.launch(launcherIntent)
     }
 
@@ -72,6 +75,8 @@ class FestivalListActivity : AppCompatActivity(), FestivalListener {
                 (binding.recyclerView.adapter)?.
                 notifyItemRangeChanged(0,app.festivals.findAll().size)
             }
+            else // Deleting
+                if (it.resultCode == 99)     (binding.recyclerView.adapter)?.notifyItemRemoved(position)
         }
 }
 

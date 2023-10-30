@@ -3,11 +3,12 @@ package org.wit.festival.adapters
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import com.squareup.picasso.Picasso
 import org.wit.festival.databinding.CardFestivalBinding
 import org.wit.festival.models.FestivalModel
 
 interface FestivalListener {
-    fun onFestivalClick(festival: FestivalModel)
+    fun onFestivalClick(festival: FestivalModel, position : Int)
 }
 
 class FestivalAdapter constructor(private var festivals: List<FestivalModel>,
@@ -38,7 +39,8 @@ class FestivalAdapter constructor(private var festivals: List<FestivalModel>,
             binding.valueForMoney.rating = festival.valueForMoney
             binding.accessibility.rating = festival.accessibility
             binding.familyFriendly.rating = festival.familyFriendly
-            binding.root.setOnClickListener { listener.onFestivalClick(festival) }
+            Picasso.get().load(festival.image).resize(200,200).into(binding.imageIcon)
+            binding.root.setOnClickListener { listener.onFestivalClick(festival,adapterPosition) }
         }
     }
 }

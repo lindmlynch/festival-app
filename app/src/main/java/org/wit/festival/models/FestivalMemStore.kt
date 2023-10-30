@@ -39,6 +39,9 @@ class FestivalMemStore : FestivalStore {
         }
     }
 
+    override fun delete(festival: FestivalModel) {
+        festivals.remove(festival)
+    }
     fun logAll() {
         festivals.forEach{ i("${it}") }
     }

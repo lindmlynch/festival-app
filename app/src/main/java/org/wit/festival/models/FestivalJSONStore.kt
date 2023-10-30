@@ -59,6 +59,10 @@ class FestivalJSONStore(private val context: Context) : FestivalStore {
         serialize()
     }
 
+    override fun delete(festival: FestivalModel) {
+        festivals.remove(festival)
+        serialize()
+    }
     private fun serialize() {
         val jsonString = gsonBuilder.toJson(festivals, listType)
         write(context, JSON_FILE, jsonString)
