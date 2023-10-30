@@ -72,9 +72,8 @@ class FestivalActivity : AppCompatActivity() {
             finish()
         }
 
-
         binding.chooseImage.setOnClickListener {
-            showImagePicker(imageIntentLauncher)
+            showImagePicker(imageIntentLauncher,this)
         }
 
         binding.festivalLocation.setOnClickListener {
@@ -115,7 +114,12 @@ class FestivalActivity : AppCompatActivity() {
                     RESULT_OK -> {
                         if (result.data != null) {
                             i("Got Result ${result.data!!.data}")
-                            festival.image = result.data!!.data!!
+
+                            val image = result.data!!.data!!
+                            contentResolver.takePersistableUriPermission(image,
+                                Intent.FLAG_GRANT_READ_URI_PERMISSION)
+                            festival.image = image
+
                             Picasso.get()
                                 .load(festival.image)
                                 .into(binding.festivalImage)
