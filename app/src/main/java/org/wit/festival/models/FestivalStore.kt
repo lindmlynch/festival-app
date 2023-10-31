@@ -5,4 +5,5 @@ interface FestivalStore {
     fun create(festival: FestivalModel)
     fun update(festival: FestivalModel)
     fun delete(festival: FestivalModel)
+    fun findById(id:Long) : FestivalModel?
 }

@@ -22,6 +22,11 @@ class FestivalListActivity : AppCompatActivity(), FestivalListener {
     private lateinit var binding: ActivityFestivalListBinding
     private var position: Int = 0
 
+    private val mapIntentLauncher =
+        registerForActivityResult(
+            ActivityResultContracts.StartActivityForResult()
+        )    { }
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityFestivalListBinding.inflate(layoutInflater)
@@ -46,6 +51,10 @@ class FestivalListActivity : AppCompatActivity(), FestivalListener {
             R.id.item_add -> {
                 val launcherIntent = Intent(this, FestivalActivity::class.java)
                 getResult.launch(launcherIntent)
+            }
+            R.id.item_map -> {
+                val launcherIntent = Intent(this, FestivalMapsActivity::class.java)
+                mapIntentLauncher.launch(launcherIntent)
             }
         }
         return super.onOptionsItemSelected(item)

@@ -63,6 +63,11 @@ class FestivalJSONStore(private val context: Context) : FestivalStore {
         festivals.remove(festival)
         serialize()
     }
+
+    override fun findById(id:Long) : FestivalModel? {
+        val foundFestival: FestivalModel? = festivals.find { it.id == id }
+        return foundFestival
+    }
     private fun serialize() {
         val jsonString = gsonBuilder.toJson(festivals, listType)
         write(context, JSON_FILE, jsonString)

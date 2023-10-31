@@ -42,6 +42,11 @@ class FestivalMemStore : FestivalStore {
     override fun delete(festival: FestivalModel) {
         festivals.remove(festival)
     }
+
+    override fun findById(id:Long) : FestivalModel? {
+        val foundFestival: FestivalModel? = festivals.find { it.id == id }
+        return foundFestival
+    }
     fun logAll() {
         festivals.forEach{ i("${it}") }
     }

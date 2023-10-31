@@ -6,7 +6,7 @@
     <uses-permission android:name="android.permission.ACCESS_MEDIA_LOCATION" />
 
     <application
-        android:name="org.wit.festival.main.MainApp"
+        android:name=".main.MainApp"
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
         android:fullBackupContent="@xml/backup_rules"
@@ -16,6 +16,12 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Festival"
         tools:targetApi="31">
+        <activity
+            android:name=".activities.FestivalMapsActivity"
+            android:exported="false"
+            android:label="@string/title_activity_festival_maps"
+            android:theme="@style/Theme.Festival" />
+
         <meta-data
             android:name="com.google.android.geo.API_KEY"
             android:value="${MAPS_API_KEY}" />
@@ -43,4 +49,5 @@
                 android:value="" />
         </activity>
     </application>
+
 </manifest>
