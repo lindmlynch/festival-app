@@ -78,7 +78,7 @@ class FestivalActivity : AppCompatActivity() {
         }
 
         binding.festivalLocation.setOnClickListener {
-            val location = Location(52.245696, -7.139102, 15f)
+            val location = Location(53.3498, -6.2603, 8f)
             if (festival.zoom != 0f) {
                 location.lat =  festival.lat
                 location.lng = festival.lng
