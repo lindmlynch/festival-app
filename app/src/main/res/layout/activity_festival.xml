@@ -17,7 +17,7 @@
             android:id="@+id/appBarLayout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@color/colorAccent"
+            android:background="@color/vibrantPink"
             android:fitsSystemWindows="true"
             app:elevation="0dip"
             app:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
@@ -26,7 +26,7 @@
                 android:id="@+id/toolbarAdd"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                app:titleTextColor="@color/colorPrimary" />
+                app:titleTextColor="@color/white" />
         </com.google.android.material.appbar.AppBarLayout>
 
         <ScrollView
@@ -52,7 +52,8 @@
                     android:maxLength="25"
                     android:maxLines="1"
                     android:padding="8dp"
-                    android:textColor="@color/colorPrimaryDark"
+                    android:textColor="@color/black"
+                    android:background="@color/sunnyYellow"
                     android:textSize="14sp" />
 
                 <EditText
@@ -65,7 +66,8 @@
                     android:maxLength="25"
                     android:maxLines="1"
                     android:padding="8dp"
-                    android:textColor="@color/colorPrimaryDark"
+                    android:textColor="@color/black"
+                    android:background="@color/sunnyYellow"
                     android:textSize="14sp" />
 
                 <EditText
@@ -78,7 +80,8 @@
                     android:maxLength="25"
                     android:maxLines="1"
                     android:padding="8dp"
-                    android:textColor="@color/colorPrimaryDark"
+                    android:textColor="@color/black"
+                    android:background="@color/sunnyYellow"
                     android:textSize="14sp" />
 
                 <TextView
@@ -86,7 +89,8 @@
                     android:layout_height="wrap_content"
                     android:layout_marginStart="8dp"
                     android:layout_marginTop="8dp"
-                    android:text="Value for Money:" />
+                    android:text="Value for Money:"
+                    android:textColor="@color/brightPurple"/>
 
                 <RatingBar
                     android:id="@+id/valueForMoney"
@@ -101,7 +105,8 @@
                     android:layout_height="wrap_content"
                     android:layout_marginStart="8dp"
                     android:layout_marginTop="8dp"
-                    android:text="Accessibility:" />
+                    android:text="Accessibility:"
+                    android:textColor="@color/brightPurple"/>
 
                 <RatingBar
                     android:id="@+id/accessibility"
@@ -116,7 +121,8 @@
                     android:layout_height="wrap_content"
                     android:layout_marginStart="8dp"
                     android:layout_marginTop="8dp"
-                    android:text="Family-Friendliness:" />
+                    android:text="Family-Friendliness:"
+                    android:textColor="@color/brightPurple"/>
 
                 <RatingBar
                     android:id="@+id/familyFriendly"
@@ -131,17 +137,18 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_margin="16dp"
-                    android:background="@color/colorAccent"
+                    android:background="@color/turquoise"
                     android:paddingBottom="8dp"
                     android:paddingTop="8dp"
                     android:text="@string/button_addImage"
-                    android:textColor="@color/colorPrimary"
+                    android:textColor="@color/white"
                     android:textSize="16sp"/>
 
                 <ImageView
                     android:id="@+id/festivalImage"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:background="@color/brightPurple"
                     app:srcCompat="@mipmap/ic_launcher"/>
 
                 <Button
@@ -149,12 +156,12 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_margin="16dp"
-                    android:background="@color/colorAccent"
+                    android:background="@color/turquoise"
                     android:paddingBottom="8dp"
                     android:paddingTop="8dp"
                     android:stateListAnimator="@null"
                     android:text="@string/button_location"
-                    android:textColor="@color/colorPrimary"
+                    android:textColor="@color/white"
                     android:textSize="16sp"/>
 
                 <Button
@@ -162,12 +169,12 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_margin="16dp"
-                    android:background="@color/colorAccent"
+                    android:background="@color/turquoise"
                     android:paddingTop="8dp"
                     android:paddingBottom="8dp"
                     android:stateListAnimator="@null"
                     android:text="@string/button_addFestival"
-                    android:textColor="@color/colorPrimary"
+                    android:textColor="@color/white"
                     android:textSize="16sp" />
             </LinearLayout>
         </ScrollView>

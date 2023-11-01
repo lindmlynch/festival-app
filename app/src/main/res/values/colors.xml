@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <color name="vibrantPink">#FF4081</color> <!-- Primary Color -->
+    <color name="turquoise">#1DE9B6</color>   <!-- Secondary Color -->
+    <color name="sunnyYellow">#FFEB3B</color> <!-- Accent Color -->
+    <color name="brightPurple">#7E57C2</color>
+    <color name="white">#FFFFFF</color>
     <color name="black">#FF000000</color>
-    <color name="white">#FFFFFFFF</color>
-    <color name="colorPrimary">#FFFFFF</color>
-    <color name="colorPrimaryDark">#000000</color>
-    <color name="colorAccent">#4c90af</color>
 </resources>
