@@ -9,6 +9,7 @@ import android.view.MenuItem
 import androidx.activity.result.ActivityResultLauncher
 import androidx.activity.result.contract.ActivityResultContracts
 import com.google.android.material.snackbar.Snackbar
+import com.google.firebase.auth.FirebaseAuth
 import com.squareup.picasso.Picasso
 import org.wit.festival.R
 import org.wit.festival.databinding.ActivityFestivalBinding
@@ -29,6 +30,13 @@ class FestivalActivity : AppCompatActivity() {
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
+
+        if (FirebaseAuth.getInstance().currentUser == null) {
+            val intent = Intent(this, LoginActivity::class.java)
+            startActivity(intent)
+            finish()
+            return
+        }
         super.onCreate(savedInstanceState)
         var edit = false
         binding = ActivityFestivalBinding.inflate(layoutInflater)

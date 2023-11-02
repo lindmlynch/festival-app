@@ -8,6 +8,7 @@ import android.view.Menu
 import android.view.MenuItem
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.google.firebase.auth.FirebaseAuth
 import org.wit.festival.R
 import org.wit.festival.adapters.FestivalAdapter
 import org.wit.festival.adapters.FestivalListener
@@ -28,6 +29,7 @@ class FestivalListActivity : AppCompatActivity(), FestivalListener {
         )    { }
 
     override fun onCreate(savedInstanceState: Bundle?) {
+
         super.onCreate(savedInstanceState)
         binding = ActivityFestivalListBinding.inflate(layoutInflater)
         setContentView(binding.root)
@@ -64,6 +66,10 @@ class FestivalListActivity : AppCompatActivity(), FestivalListener {
                 val loginIntent = Intent(this, LoginActivity::class.java)
                 startActivity(loginIntent)
             }
+
+            R.id.item_logout -> {
+                logout()
+            }
         }
         return super.onOptionsItemSelected(item)
     }
@@ -96,6 +102,14 @@ class FestivalListActivity : AppCompatActivity(), FestivalListener {
             else // Deleting
                 if (it.resultCode == 99)     (binding.recyclerView.adapter)?.notifyItemRemoved(position)
         }
+    private fun logout() {
+        FirebaseAuth.getInstance().signOut()
+        val intent = Intent(this, LoginActivity::class.java)
+        intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
+        startActivity(intent)
+        finish()
+    }
+
 }
 
 
