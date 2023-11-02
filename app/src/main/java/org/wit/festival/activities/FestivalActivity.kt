@@ -101,18 +101,13 @@ class FestivalActivity : AppCompatActivity() {
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         when (item.itemId) {
-
             R.id.item_delete -> {
                 setResult(99)
                 app.festivals.delete(festival)
                 finish()
-            }
-            R.id.item_cancel -> {
-                finish()
-            }
-            else -> return super.onOptionsItemSelected(item)
+            }        R.id.item_cancel -> { finish() }
         }
-        return false
+        return super.onOptionsItemSelected(item)
     }
 
     private fun registerImagePickerCallback() {

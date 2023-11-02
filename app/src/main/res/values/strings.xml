@@ -16,4 +16,5 @@
     <string name="menu_deleteFestival">Delete</string>
     <string name="title_activity_festival_maps">Map of All Festivals </string>
     <string name="menu_signUp">Sign Up</string>
+    <string name="menu_login">Login</string>
 </resources>

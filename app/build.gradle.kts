@@ -58,7 +58,7 @@ dependencies {
     implementation("com.google.code.gson:gson:2.9.0")
     implementation("androidx.navigation:navigation-ui-ktx:2.7.4")
     implementation(platform("com.google.firebase:firebase-bom:32.5.0"))
-    implementation ("com.google.firebase:firebase-auth-ktx:latest_version")
+    implementation ("com.google.firebase:firebase-auth:21.0.1")
     implementation ("com.google.firebase:firebase-firestore:24.0.1")
     testImplementation("junit:junit:4.13.2")
     androidTestImplementation("androidx.test.ext:junit:1.1.5")

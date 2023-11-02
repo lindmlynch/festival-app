@@ -60,6 +60,10 @@ class FestivalListActivity : AppCompatActivity(), FestivalListener {
                 val launcherIntent = Intent(this, SignUpActivity::class.java)
                 startActivity(launcherIntent)
             }
+            R.id.item_login -> {
+                val loginIntent = Intent(this, LoginActivity::class.java)
+                startActivity(loginIntent)
+            }
         }
         return super.onOptionsItemSelected(item)
     }
