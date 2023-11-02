@@ -56,9 +56,14 @@ class FestivalListActivity : AppCompatActivity(), FestivalListener {
                 val launcherIntent = Intent(this, FestivalMapsActivity::class.java)
                 mapIntentLauncher.launch(launcherIntent)
             }
+            R.id.item_signUp -> {
+                val launcherIntent = Intent(this, SignUpActivity::class.java)
+                startActivity(launcherIntent)
+            }
         }
         return super.onOptionsItemSelected(item)
     }
+
 
     private val getResult =
         registerForActivityResult(

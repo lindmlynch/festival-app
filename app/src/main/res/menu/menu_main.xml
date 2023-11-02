@@ -13,4 +13,10 @@
         android:icon="@android:drawable/ic_menu_mapmode"
         android:title="@string/menu_addFestival"
         app:showAsAction="always"/>
+
+    <item
+        android:id="@+id/item_signUp"
+        android:icon="@android:drawable/ic_menu_add"
+        android:title="@string/menu_signUp"
+        app:showAsAction="ifRoom"/>
 </menu>
