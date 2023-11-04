@@ -54,41 +54,73 @@
             app:layout_constraintTop_toBottomOf="@+id/description"
             tools:text="A Date" />
 
-        <RatingBar
-            android:id="@+id/valueForMoney"
-            style="?android:attr/ratingBarStyleSmall"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:numStars="5"
-            android:stepSize="0.5"
-            android:layout_marginTop="8dp"
-            app:layout_constraintStart_toStartOf="@+id/date"
-            app:layout_constraintTop_toBottomOf="@+id/date"
-            android:progressTint="@color/brightPurple"/>
+                <TextView
+                    android:id="@+id/valueForMoneyLabel"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="Value for Money"
+                    app:layout_constraintStart_toStartOf="@+id/date"
+                    app:layout_constraintEnd_toStartOf="@+id/valueForMoney"
+                    app:layout_constraintTop_toTopOf="@+id/valueForMoney"
+                    app:layout_constraintBottom_toBottomOf="@+id/valueForMoney"/>
 
-        <RatingBar
-            android:id="@+id/accessibility"
-            style="?android:attr/ratingBarStyleSmall"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:numStars="5"
-            android:stepSize="0.5"
-            android:layout_marginTop="4dp"
-            app:layout_constraintStart_toStartOf="@+id/valueForMoney"
-            app:layout_constraintTop_toBottomOf="@+id/valueForMoney"
-            android:progressTint="@color/brightPurple"/>
+                <RatingBar
+                    android:id="@+id/valueForMoney"
+                    style="?android:attr/ratingBarStyleSmall"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:numStars="5"
+                    android:stepSize="0.5"
+                    android:layout_marginTop="8dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/date"
+                    android:progressTint="@color/brightPurple"/>
 
-        <RatingBar
-            android:id="@+id/familyFriendly"
-            style="?android:attr/ratingBarStyleSmall"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:numStars="5"
-            android:stepSize="0.5"
-            android:layout_marginTop="4dp"
-            app:layout_constraintStart_toStartOf="@+id/accessibility"
-            app:layout_constraintTop_toBottomOf="@+id/accessibility"
-            android:progressTint="@color/brightPurple"/>
+                <!-- Similar TextView and RatingBar pairs for Accessibility and Family Friendly -->
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
-</androidx.cardview.widget.CardView>
+                <TextView
+                    android:id="@+id/accessibilityLabel"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="Accessibility"
+                    app:layout_constraintStart_toStartOf="@+id/valueForMoneyLabel"
+                    app:layout_constraintEnd_toStartOf="@+id/accessibility"
+                    app:layout_constraintTop_toTopOf="@+id/accessibility"
+                    app:layout_constraintBottom_toBottomOf="@+id/accessibility"/>
+
+                <RatingBar
+                    android:id="@+id/accessibility"
+                    style="?android:attr/ratingBarStyleSmall"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:numStars="5"
+                    android:stepSize="0.5"
+                    android:layout_marginTop="4dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/valueForMoney"
+                    android:progressTint="@color/brightPurple"/>
+
+                <TextView
+                    android:id="@+id/familyFriendlyLabel"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="Family Friendly"
+                    app:layout_constraintStart_toStartOf="@+id/accessibilityLabel"
+                    app:layout_constraintEnd_toStartOf="@+id/familyFriendly"
+                    app:layout_constraintTop_toTopOf="@+id/familyFriendly"
+                    app:layout_constraintBottom_toBottomOf="@+id/familyFriendly"/>
+
+                <RatingBar
+                    android:id="@+id/familyFriendly"
+                    style="?android:attr/ratingBarStyleSmall"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:numStars="5"
+                    android:stepSize="0.5"
+                    android:layout_marginTop="4dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/accessibility"
+                    android:progressTint="@color/brightPurple"/>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.cardview.widget.CardView>

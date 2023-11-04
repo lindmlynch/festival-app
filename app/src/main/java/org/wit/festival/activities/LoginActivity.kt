@@ -23,6 +23,11 @@ class LoginActivity : AppCompatActivity() {
         binding = LoginActivityBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        binding.tvSignUp.setOnClickListener {
+            val intent = Intent(this, SignUpActivity::class.java)
+            startActivity(intent)
+        }
+
         binding.btnLogin.setOnClickListener {
             val email = binding.edtEmail.text.toString().trim()
             val password = binding.edtPassword.text.toString().trim()
@@ -40,7 +45,7 @@ class LoginActivity : AppCompatActivity() {
 
                                         user?.let {
 
-                                            val intent = Intent(this, FestivalActivity::class.java).apply {
+                                            val intent = Intent(this, FestivalListActivity::class.java).apply {
                                                 putExtra("user", it)
                                             }
                                             startActivity(intent)

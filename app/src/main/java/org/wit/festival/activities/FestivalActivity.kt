@@ -51,6 +51,9 @@ class FestivalActivity : AppCompatActivity() {
             binding.festivalTitle.setText(festival.title)
             binding.description.setText(festival.description)
             binding.date.setText(festival.date)
+            binding.valueForMoney.rating = festival.valueForMoney
+            binding.accessibility.rating = festival.accessibility
+            binding.familyFriendly.rating = festival.familyFriendly
             binding.btnAdd.setText(R.string.save_festival)
             Picasso.get()
                 .load(festival.image)

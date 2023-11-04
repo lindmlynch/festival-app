@@ -16,7 +16,7 @@ class SplashScreenActivity : AppCompatActivity() {
 
         Handler(Looper.getMainLooper()).postDelayed({
 
-            startActivity(Intent(this, FestivalListActivity::class.java))
+            startActivity(Intent(this, LoginActivity::class.java))
 
             finish()
         }, 2000)

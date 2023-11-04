@@ -22,7 +22,8 @@
             android:textSize="24sp"
             android:textStyle="bold"
             android:layout_gravity="center"
-            android:layout_marginBottom="24dp"/>
+            android:layout_marginBottom="24dp"
+            android:textColor="@color/vibrantPink" />
 
         <EditText
             android:id="@+id/edtEmail"
@@ -31,6 +32,8 @@
             android:hint="Email"
             android:inputType="textEmailAddress"
             android:maxLines="1"
+            android:background="@color/sunnyYellow"
+            android:textColor="@color/black"
             android:layout_marginBottom="16dp"/>
 
         <EditText
@@ -40,6 +43,8 @@
             android:hint="Password"
             android:inputType="textPassword"
             android:maxLines="1"
+            android:background="@color/sunnyYellow"
+            android:textColor="@color/black"
             android:layout_marginBottom="24dp"/>
 
         <Button
@@ -47,8 +52,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Login"
-            android:backgroundTint="@color/design_default_color_primary"
-            android:textColor="@android:color/white"
+            android:background="@color/turquoise"
+            android:textColor="@color/white"
             android:layout_marginBottom="16dp"/>
 
         <TextView
@@ -59,7 +64,7 @@
             android:textSize="16sp"
             android:layout_gravity="center"
             android:layout_marginTop="16dp"
-            android:textColor="@color/design_default_color_primary"
+            android:textColor="@color/vibrantPink"
             android:clickable="true"
             android:focusable="true"
             android:textStyle="bold"/>

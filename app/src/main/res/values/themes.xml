@@ -9,5 +9,7 @@
         <item name="colorOnSecondary">@color/black</item>
         <!-- Status bar color. -->
         <item name="android:statusBarColor">?attr/colorPrimaryVariant</item>
+        <item name="android:textColorPrimary">@color/white</item>
+        <item name="colorSurface">@color/vibrantPink</item>
     </style>
 </resources>

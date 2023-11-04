@@ -61,7 +61,7 @@ class SignUpActivity : AppCompatActivity() {
         firestore.collection("users").document(user.id).set(user)
             .addOnSuccessListener {
                 Toast.makeText(baseContext, "Sign up successful", Toast.LENGTH_SHORT).show()
-                val intent = Intent(this, FestivalActivity::class.java)
+                val intent = Intent(this, LoginActivity::class.java)
                 startActivity(intent)
                 finish()
             }

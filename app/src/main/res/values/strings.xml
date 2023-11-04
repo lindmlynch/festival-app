@@ -4,6 +4,9 @@
     <string name="hint_festivalTitle">Festival Title</string>
     <string name="hint_festivalDescription">Description</string>
     <string name="hint_festivalDate">Date</string>
+    <string name="value_for_money">Value for Money:</string>
+    <string name="accessibility">Accessibility:</string>
+    <string name="family_friendliness">Family Friendliness:</string>
     <string name="menu_addFestival">Add</string>
     <string name="save_festival"> Save Festival</string>
     <string name="menu_cancelFestival">Cancel</string>
