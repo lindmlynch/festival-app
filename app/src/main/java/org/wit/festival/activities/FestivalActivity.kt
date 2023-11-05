@@ -63,26 +63,29 @@ class FestivalActivity : AppCompatActivity() {
             }
         }
 
-        binding.btnAdd.setOnClickListener() {
+        binding.btnAdd.setOnClickListener {
             festival.title = binding.festivalTitle.text.toString()
             festival.description = binding.description.text.toString()
             festival.date = binding.date.text.toString()
             festival.valueForMoney = binding.valueForMoney.rating
             festival.accessibility = binding.accessibility.rating
             festival.familyFriendly = binding.familyFriendly.rating
+            festival.userId = FirebaseAuth.getInstance().currentUser?.uid.orEmpty()
+
             if (festival.title.isEmpty()) {
-                Snackbar.make(it,R.string.enter_festival_title, Snackbar.LENGTH_LONG)
-                    .show()
+                Snackbar.make(it, R.string.enter_festival_title, Snackbar.LENGTH_LONG).show()
             } else {
                 if (edit) {
                     app.festivals.update(festival.copy())
                 } else {
                     app.festivals.create(festival.copy())
                 }
+                setResult(RESULT_OK)
+                finish()
             }
-            setResult(RESULT_OK)
-            finish()
         }
+
+
 
         binding.chooseImage.setOnClickListener {
             showImagePicker(imageIntentLauncher,this)

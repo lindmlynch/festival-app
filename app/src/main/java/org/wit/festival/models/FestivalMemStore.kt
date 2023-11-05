@@ -47,6 +47,9 @@ class FestivalMemStore : FestivalStore {
         val foundFestival: FestivalModel? = festivals.find { it.id == id }
         return foundFestival
     }
+    override fun findByUserId(userId: String): List<FestivalModel> {
+        return festivals.filter { it.userId == userId }
+    }
     fun logAll() {
         festivals.forEach{ i("${it}") }
     }

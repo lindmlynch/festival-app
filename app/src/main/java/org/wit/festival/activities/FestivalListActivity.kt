@@ -110,6 +110,16 @@ class FestivalListActivity : AppCompatActivity(), FestivalListener {
         finish()
     }
 
+    override fun onResume() {
+        super.onResume()
+        loadFestivals()
+    }
+
+    private fun loadFestivals() {
+        val userId = FirebaseAuth.getInstance().currentUser?.uid.orEmpty()
+        val userFestivals = app.festivals.findByUserId(userId)
+        binding.recyclerView.adapter = FestivalAdapter(userFestivals, this)
+    }
 }
 
 

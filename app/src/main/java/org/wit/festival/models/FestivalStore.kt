@@ -6,4 +6,5 @@ interface FestivalStore {
     fun update(festival: FestivalModel)
     fun delete(festival: FestivalModel)
     fun findById(id:Long) : FestivalModel?
+    fun findByUserId(userId: String): List<FestivalModel>
 }
