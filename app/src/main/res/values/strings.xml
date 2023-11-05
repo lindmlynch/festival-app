@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Festival</string>
+    <string name="app_name">My Festivals</string>
     <string name="button_addFestival">Add Festival</string>
     <string name="hint_festivalTitle">Festival Title</string>
     <string name="hint_festivalDescription">Description</string>
