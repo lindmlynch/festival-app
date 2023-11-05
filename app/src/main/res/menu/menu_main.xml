@@ -15,6 +15,13 @@
         app:showAsAction="always"/>
 
     <item
+        android:id="@+id/action_search"
+        android:title="@string/search"
+        app:showAsAction="collapseActionView|ifRoom"
+        app:actionViewClass="androidx.appcompat.widget.SearchView" />
+
+
+    <item
         android:id="@+id/item_signUp"
         android:icon="@android:drawable/ic_menu_add"
         android:title="@string/menu_signUp"

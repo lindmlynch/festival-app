@@ -58,7 +58,6 @@
         <activity android:name=".activities.SignUpActivity" />
         <activity android:name=".activities.LoginActivity" />
 
-
     </application>
 
 </manifest>
